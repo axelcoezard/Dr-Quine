@@ -6,7 +6,7 @@
 #    By: acoezard <acoezard@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 23:40:42 by acoezard          #+#    #+#              #
-#    Updated: 2022/03/24 14:57:39 by acoezard         ###   ########.fr        #
+#    Updated: 2022/03/24 15:34:05 by acoezard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SULLY_SRCS		:=	Sully.s
 SULLY_OBJS		:=	$(addprefix bin/, $(SULLY_SRCS:.s=.o))
 
 CC			:=	gcc
-CFLAGS		:=	-m64 -lc 2>&- -fsanitize=address
+CFLAGS		:=	-m64 -lc 2>&-
 ASM			:=	nasm
 ASM_FLAGS	:=	-f macho64
 

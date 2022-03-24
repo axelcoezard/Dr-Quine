@@ -9,7 +9,7 @@ Sully_*
 
 Grace_kid.c
 Sully_*.c
-Grace_kid.asm
-Sully_*.asm
+Grace_kid.s
+Sully_*.s
 
 bin/
