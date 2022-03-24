@@ -6,7 +6,7 @@
 #    By: acoezard <acoezard@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 23:40:42 by acoezard          #+#    #+#              #
-#    Updated: 2022/03/24 13:39:42 by acoezard         ###   ########.fr        #
+#    Updated: 2022/03/24 16:13:48 by acoezard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ ${SULLY_NAME}: ${SULLY_OBJS}
 	@echo ${__GREEN}"Finished "${__WHITE}${SULLY_NAME}" bin target"${__EOC}
 
 clean:
-	@rm -rf bin/ ${SULLY_NAME}_*
+	@rm -rf bin/ ${SULLY_NAME}_* ${GRACE_NAME}_*
 
 fclean: clean
 	@rm -rf ${COLLEEN_NAME} ${GRACE_NAME} ${SULLY_NAME}
