@@ -6,7 +6,7 @@
 #    By: acoezard <acoezard@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/24 23:40:42 by acoezard          #+#    #+#              #
-#    Updated: 2022/03/24 13:39:42 by acoezard         ###   ########.fr        #
+#    Updated: 2022/03/24 14:57:39 by acoezard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,16 +17,19 @@ SULLY_NAME		:=	Sully
 # -----------------------------------------------------------------------------
 # COMPILATION
 # -----------------------------------------------------------------------------
-COLLEEN_SRCS	:=	Colleen.c
-COLLEEN_OBJS	:=	$(addprefix bin/, $(COLLEEN_SRCS:.c=.o))
+COLLEEN_SRCS	:=	Colleen.s
+COLLEEN_OBJS	:=	$(addprefix bin/, $(COLLEEN_SRCS:.s=.o))
 
-GRACE_SRCS		:=	Grace.c
-GRACE_OBJS		:=	$(addprefix bin/, $(GRACE_SRCS:.c=.o))
+GRACE_SRCS		:=	Grace.s
+GRACE_OBJS		:=	$(addprefix bin/, $(GRACE_SRCS:.s=.o))
 
-SULLY_SRCS		:=	Sully.c
-SULLY_OBJS		:=	$(addprefix bin/, $(SULLY_SRCS:.c=.o))
+SULLY_SRCS		:=	Sully.s
+SULLY_OBJS		:=	$(addprefix bin/, $(SULLY_SRCS:.s=.o))
 
-CC				:=	clang
+CC			:=	gcc
+CFLAGS		:=	-m64 -lc 2>&- -fsanitize=address
+ASM			:=	nasm
+ASM_FLAGS	:=	-f macho64
 
 # -----------------------------------------------------------------------------
 # COLORS
@@ -41,9 +44,9 @@ __EOC		:=	"\033[0;0m"
 # -----------------------------------------------------------------------------
 # RULES
 # -----------------------------------------------------------------------------
-bin/%.o: %.c
+bin/%.o: %.s
 	@mkdir -p ${dir $@}
-	@${CC} ${CFLAGS} -o $@ -c $^ -I includes
+	@${ASM} ${ASM_FLAGS} -o $@ $^
 	@echo ${__GREEN}"Compiling "${__WHITE}$^${__EOC}
 
 all: ${COLLEEN_NAME} ${GRACE_NAME} ${SULLY_NAME}
