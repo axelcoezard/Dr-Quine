@@ -17,5 +17,3 @@ fclose(fd);
 system(compile);
 if (N > 0) system(execute);
 return 0;}
-
-
