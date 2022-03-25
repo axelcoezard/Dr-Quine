@@ -11,5 +11,7 @@ Grace_kid.c
 Sully_*.c
 Grace_kid.s
 Sully_*.s
+Grace_kid.js
+Sully_*.js
 
 bin/
