@@ -1,7 +1,7 @@
 (function main() {
 	const fs = require("fs")
 	const process = require("child_process")
-	let N = 100
+	let N = 5
 	if (fs.existsSync(`Sully_${N}.js`)) N--;
 	fs.appendFileSync(`Sully_${N}.js`, `(${main.toString().replace(/\d+/, N)})()\n`)
 	if (N > 0) process.execFile("node", [`Sully_${N}.js`])
